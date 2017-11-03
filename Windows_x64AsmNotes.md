@@ -9,7 +9,7 @@ x64 Assembly language notes using MASM (Microsoft Assembler)
 # Fundemental Data Types
 
 Data Type       | Bit Length | Byte Length | Typical Use
-----------------|------------|--------------------------------------------------
+----------------|------------|-------------|------------------------------------
 Byte            | 8          | 1           | Char, int, BCD
 Word            | 16         | 2           | Char, int
 Double Word     | 32         | 4           | Int, single prec float
