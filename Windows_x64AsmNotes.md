@@ -42,7 +42,7 @@ There are eight 32-bit registers in the x86-32 core.  They are primarily used fo
 
 32-bit Register | 16-bit register | 8-bit registers | 32-bit Specialized Uses
 ----------------|-----------------|-----------------|------------------------------------
-EAX             | AX              | AH and AL       | Accumulator
+EAX             | AX              | AH and AL       | Accumulator.  Stores return values.
 EBX             | BX              | BH and BL       | Memory pointer, base register
 ECX             | CX              | CH and CL       | String repeat counts, loop counter 
 EDX             | DX              | DH and DL       | imul and idiv operations
