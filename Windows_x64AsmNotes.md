@@ -49,3 +49,17 @@ EDI             | DI              | N/A             | Destination String Address
 EBP             | BP              | N/A             | Base pointer for items on stack
 ESP             | SP              | N/A             | Stack related operations
 
+Some of the Specialized Uses are by convention only. Several can be used for general purposes (calculations, temp storage, etc), although the **ESP** should not be used for anything other than its stack related functionality.
+
+## Segment Registers
+
+The segment registers **(CS, DS, SS, ES, FS, GS)** are used to specify memory for **code, data, and stack segements**.  Normally the programmer doesn't need to deal with these registers, the operating system manages them.
+
+## Other Registers
+
+* **EFLAG Register** - contains status bits that track logical and arithmetic operations, among other things
+* **EIP Register** - the instruction pointer that contains the offset to the next instruction to be executed.  This register is not directly accessed.
+* **X87 Registers (MMX)** - Supports **SIMD Single Instruction Multiple Data** operations
+* **AVE/SSE Reigisters** - Supports **SIMD Single Instruction Multiple Data** operations
+
+
