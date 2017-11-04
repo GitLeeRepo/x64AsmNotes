@@ -62,4 +62,25 @@ The segment registers **(CS, DS, SS, ES, FS, GS)** are used to specify memory fo
 * **X87 Registers (MMX)** - Supports **SIMD Single Instruction Multiple Data** operations
 * **AVE/SSE Reigisters** - Supports **SIMD Single Instruction Multiple Data** operations
 
+# Instruction Set
+
+## Operands
+
+There are three basic types of operands:
+* Immediate - constant value that is part of the instruction
+* Register - operate on the general purpose registers
+* Memory - operate on memory and data stored in memory
+
+## Memory Addressing
+
+Memory is addresses through several components (Displacements, Base Registers, Index Registers, and a scale factor for the index).  An **Effective Address** is caluclated from **BaseReg + IndexReg  \* ScaleFactor + Displ** 
+
+Address Mode                    | Example
+--------------------------------|-------------------------------
+Disp                            | mov eax,\[ValInMem\]
+BaseReg                         | mov eax,\[ebx\]
+BaseReg + Disp                  | mov eax,\[ebx+8\]
+Disp + IndexReg * SF            | mov eax,\[MyArray+esi\*4\]
+BaseReg + IndexReg              | mov eax,\[ebx+esi\]
+BaseReg + IndexReg  * SF + Disp | mov eax,\[ebx+esi\*4+MyVar\]
 
