@@ -4,6 +4,8 @@ x64 Assembly language notes using MASM (Microsoft Assembler)
 
 # References
 
+* [Modern X86 Assembly Language Programming: 32-bit, 64-bit, SSE, and AVX](https://www.amazon.com/gp/product/1484200659/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1) by Daniel Kusswurm, published by Apress.  Many of the notes here come from following this book.
+
 ## YouTube Videos
 
 # Data Types
@@ -165,5 +167,80 @@ Mnemonic     | Description
 **shr**      | x
 **shld**     | x
 **shrd**     | x
+
+## Byte Set and Bit String Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**setcc**    | x
+**bt**       | x
+**bts**      | x
+**btr**      | x
+**btc**      | x
+**bsf**      | x
+**bsr**      | x
+
+## String Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**cmpsb**    | x
+**cmpsw**    | x
+**cmpsd**    | x
+**lodsd**    | x
+**lodsw**    | x
+**movsb**    | x
+**movsw**    | x
+**movsd**    | x
+**scasb**    | x
+**scasw**    | x
+**scasd**    | x
+**stosb**    | x
+**stosw**    | x
+**stosd**    | x
+**rep**      | x
+**repe**     | x
+**repz**     | x
+**repne**    | x
+**repnz**    | x
+
+## Flag Manipulation Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**clc**      | x
+**stc**      | x
+**cmc**      | x
+**std**      | x
+**lahf**     | x
+**sahf**     | x
+**pushfd**   | x
+**popfd**    | x
+
+## Control Transfer Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**jmp**      | x
+**jcc**      | x
+**call**     | x
+**ret**      | x
+**enter**    | x
+**leave**    | x
+**jecxz**    | x
+**loop**     | x
+**loope**    | x
+**loopz**    | x
+**loopne**   | x
+**loopnz**   | x
+
+## Miscellaneous Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**bound**    | x
+**lea**      | x
+**nop**      | x
+**cpuid**    | x
 
 
