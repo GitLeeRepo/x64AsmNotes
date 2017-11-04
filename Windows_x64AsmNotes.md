@@ -84,3 +84,86 @@ Disp + IndexReg * SF            | mov eax,\[MyArray+esi\*4\]
 BaseReg + IndexReg              | mov eax,\[ebx+esi\]
 BaseReg + IndexReg  * SF + Disp | mov eax,\[ebx+esi\*4+MyVar\]
 
+## Data Transfer Instructions
+
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**mov**      | x
+**cmovcc**   | x
+**push**     | x
+**pop**      | x
+**pushad**   | x
+**popad**    | x
+**xchg**     | x
+**xadd**     | x
+**movsx**    | x
+**movzx**    | x
+
+## Binary Arithmetic Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**add**      | x
+**addc**     | x
+**sub**      | x
+**sbb**      | x
+**imul**     | x
+**mul**      | x
+**idiv**     | x
+**div**      | x
+**inc**      | x
+**dec**      | x
+**neg**      | x
+**daa**      | x
+**das**      | x
+**aaa**      | x
+**aas**      | x
+**aam**      | x
+**aad**      | x
+
+## Data Comparison Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**cmp**      | x
+**cmpxchg**  | x
+**cmpxchg8b** | x
+
+## Data Conversion Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**cbw**      | x
+**cwde**     | x
+**cwd**      | x
+**cdq**      | x
+**bswap**    | x
+**movbe**    | x
+**xlatb**    | x
+
+## Logical Instructions
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**and**      | x
+**or**       | x
+**xor**      | x
+**not**      | x
+**test**     | x
+
+## Rotate and Shift
+
+Mnemonic     | Description
+-------------|------------------------------------------------------------------------------------
+**rcl**      | x
+**rcr**      | x
+**rol**      | x
+**ror**      | x
+**sal/shl**  | x
+**sar**      | x
+**shr**      | x
+**shld**     | x
+**shrd**     | x
+
+
