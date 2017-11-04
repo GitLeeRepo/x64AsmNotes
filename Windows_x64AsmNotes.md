@@ -31,3 +31,21 @@ Quad Quadword   | 256        | 32          | Packed int, packed float           
 ## Packed Data Types
 
 Packed data types are used in SIMD (Single Intruction Multiple Data) instructions.  For example a 64 bit packed field can pack 8 8-bit integers, or 4 16-bit integers, or 2 32-bit integers
+
+# Registers
+
+## General Purpose Registers
+
+There are eight 32-bit registers in the x86-32 core.  They are primarily used for arithmetic, address calculations, and logical operations.
+
+32-bit Register | 16-bit register | 8-bit registers | 32-bit Specialized Uses
+----------------|-----------------|-----------------|------------------------------------
+EAX             | AX              | AH and AL       | Accumulator
+EBX             | BX              | BH and BL       | Memory pointer, base register
+ECX             | CX              | CH and CL       | String repeat counts, loop counter 
+EDX             | DX              | DH and DL       | imul and idiv operations
+ESI             | SI              | N/A             | Source String Addr
+EDI             | DI              | N/A             | Destination String Address
+EBP             | BP              | N/A             | Base pointer for items on stack
+ESP             | SP              | N/A             | Stack related operations
+
