@@ -43,6 +43,7 @@ Packed data types are used in SIMD (Single Intruction Multiple Data) instruction
     myDouble    dd  ffffffffH             ; Double word 4-bytes - unsigned: 4,294,967,295; signed -1
     myQuad      dq  ffffffffffffffffH     ; Quadword 8-bytes - signed -1
     myTen       dt  ffffffffffffffffffffH ; Ten bytes 
+    myString    db "Hello, World!", 0dh, 0ah, 0 ; terminated with a CR/LF and zero to mark the end of the string
 ```
 
 # Registers                       
