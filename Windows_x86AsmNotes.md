@@ -31,12 +31,21 @@ Quad Quadword   | 256        | 32          | Packed int, packed float           
 * **Bit strings** - can be up to **2^32 - 1** bits in length.  Several instructions provided to operate on them
 * **BCD** - Binary Coded Decimal - for representing decimal values.  When **packed** there are two digits per byte, while unmpacked are 1 digit per byte.
 
-
 ## Packed Data Types
 
 Packed data types are used in SIMD (Single Intruction Multiple Data) instructions.  For example a 64 bit packed field can pack 8 8-bit integers, or 4 16-bit integers, or 2 32-bit integers
 
-# Registers
+## Example Data Definition Statement
+
+```asm
+    myByte      db  'A'                   ; Byte
+    myWord      dw  ffffH                 ; Word 4-bytes - unsigned: 65,535; signed -1
+    myDouble    dd  ffffffffH             ; Double word 8-bytes - unsigned: 4,294,967,295; signed -1
+    myQuad      dq  ffffffffffffffffH     ; Quadword 8-bytes - signed -1
+    myTen       dt  ffffffffffffffffffffH ; Ten bytes 
+```
+
+# Registers                       
 
 ## General Purpose Registers
 
