@@ -5,7 +5,7 @@ Notes on x64 assebly code under Linux.
 # Reference
 
 * [Introduction to 64 Bit Intel Assembly Language Programming for Linux: Second Edition](https://www.amazon.com/gp/product/B008H7HL3M/ref=oh_aui_d_detailpage_o00_?ie=UTF8&psc=1) by Ray Seyfarth.  Many of the notes taken come from this book
-* [My notes on x86 assembly for Windows](https://github.com/GitLeeRepo/x64AsmNotes/blob/master/Windows_x64AsmNotes.md) which contains more indepth descriptions of the instruction set
+* [My notes on x86 assembly for Windows](https://github.com/GitLeeRepo/x64AsmNotes/blob/master/Windows_x86AsmNotes.md) which contains more indepth descriptions of the instruction set
 
 # Assembling and Linking
 
