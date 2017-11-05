@@ -1,6 +1,6 @@
 # Overview
 
-x64 Assembly language notes using MASM (Microsoft Assembler)
+x86-32 Assembly language notes using MASM (Microsoft Assembler) under Windows.  Refer to the separate x64 notes for both Windows and Linux.
 
 # References
 
