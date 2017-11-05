@@ -8,7 +8,7 @@ x64 Assembly language notes using MASM (Microsoft Assembler)
 
 ## YouTube Videos
 
-* [Intro to x86 Assembly & Architecture](https://www.youtube.com/watch?v=H4Z0S9ZbC0g) - Classroom based course by Open Security Training
+* [Intro to x86 Assembly & Architecture](https://www.youtube.com/playlist?list=PL038BE01D3BAEFDB0) - Classroom based course from Open Security Training by Xeno Kovah.  Several of the notes came from this video.
 
 # Data Types
 
@@ -92,6 +92,10 @@ BaseReg + IndexReg  * SF + Disp | mov eax,\[ebx+esi\*4+MyVar\]
 
 * **Big Endian** - Typically found on **RISC** based architectures.  Data is stored in memory for its most signficant byte to the least significant byte.  When looking at a memory dump of bytes in hex, the numbers read as we normally read numbers, from left to right.
 * **Little Endian** - Typically found on **CISC** based architectures (such as the x86).  Data is stored from the least significant byte to the most significant byte.  Therefore, when looking at a memory dump of bytes in hex, the number reads backwards to what we are accustommed to, you read the number from right to left.  This is only true of memory locations, within **registers** the bytes are layout in **Big Endian** format.
+
+### No Memory to Memory Operations
+
+Unlike some assembly languages, such as IBM's Basic Assembly Language on the mainframe, there are no memory to memory operations in x86 assembly.  Everything has to move through a register, except in the case of moving immediate (in line constant) values to memory which is allowed.
 
 ## Data Transfer Instructions
 
