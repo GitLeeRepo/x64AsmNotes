@@ -40,7 +40,7 @@ Packed data types are used in SIMD (Single Intruction Multiple Data) instruction
 
 ## General Purpose Registers
 
-There are eight 32-bit registers in the x86-32 core.  They are primarily used for arithmetic, address calculations, and logical operations.
+There are eight 32-bit general purpose registers in the x86-32 core.  They are primarily used for arithmetic, address calculations, and logical operations.
 
 32-bit Register | 16-bit register | 8-bit registers | 32-bit Specialized Uses
 ----------------|-----------------|-----------------|------------------------------------
