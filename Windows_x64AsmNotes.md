@@ -88,6 +88,11 @@ Disp + IndexReg * SF            | mov eax,\[MyArray+esi\*4\]
 BaseReg + IndexReg              | mov eax,\[ebx+esi\]
 BaseReg + IndexReg  * SF + Disp | mov eax,\[ebx+esi\*4+MyVar\]
 
+### Big Endian vs Little Endian
+
+* **Big Endian** - Typically found on **RISC** based architectures.  Data is stored in memory for its most signficant byte to the least significant byte.  When looking at a memory dump of bytes in hex, the numbers read as we normally read numbers, from left to right.
+* **Little Endian** - Typically found on **CISC** based architectures (such as the x86).  Data is stored from the least significant byte to the most significant byte.  Therefore, when looking at a memory dump of bytes in hex, the number reads backwards to what we are accustommed to, you read the number from right to left.  This is only true of memory locations, within **registers** the bytes are layout in **Big Endian** format.
+
 ## Data Transfer Instructions
 
 
@@ -252,6 +257,14 @@ Mnemonic     | Description
 * The most common caling convention
 * Function parameters pushed onto the stack from right to left
 * Saves the old stack pointer and sets up a new stack frame
-* eax or eax:edx returns the results of primitive data types
-* Caller is responsible for cleaning up the stack
+* eax or edx:eax returns the results of primitive data types
+* **Caller** is responsible for cleaning up the stack
+
+## Standard Declaration
+
+* Not as frequently used, although t is used by Microsoft C++ and the Win32 API
+* Parameters are also pushed on to the stack from right to left
+* Saves the old stack frame pointer and sets up a new one.
+* eax or edx:eax returns the results of primitive types
+* The **Called** routine is responsible for cleaning up the stack
 
