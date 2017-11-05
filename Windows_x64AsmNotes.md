@@ -8,6 +8,8 @@ x64 Assembly language notes using MASM (Microsoft Assembler)
 
 ## YouTube Videos
 
+* [Intro to x86 Assembly & Architecture](https://www.youtube.com/watch?v=H4Z0S9ZbC0g) - Classroom based course by Open Security Training
+
 # Data Types
 
 ## Fundemental Data Types
@@ -243,4 +245,13 @@ Mnemonic     | Description
 **nop**      | x
 **cpuid**    | x
 
+# Calling Conventions
+
+## C Declaration
+
+* The most common caling convention
+* Function parameters pushed onto the stack from right to left
+* Saves the old stack pointer and sets up a new stack frame
+* eax or eax:edx returns the results of primitive data types
+* Caller is responsible for cleaning up the stack
 
