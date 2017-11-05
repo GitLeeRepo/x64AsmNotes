@@ -39,8 +39,8 @@ Packed data types are used in SIMD (Single Intruction Multiple Data) instruction
 
 ```asm
     myByte      db  'A'                   ; Byte
-    myWord      dw  ffffH                 ; Word 4-bytes - unsigned: 65,535; signed -1
-    myDouble    dd  ffffffffH             ; Double word 8-bytes - unsigned: 4,294,967,295; signed -1
+    myWord      dw  ffffH                 ; Word 2-bytes - unsigned: 65,535; signed -1
+    myDouble    dd  ffffffffH             ; Double word 4-bytes - unsigned: 4,294,967,295; signed -1
     myQuad      dq  ffffffffffffffffH     ; Quadword 8-bytes - signed -1
     myTen       dt  ffffffffffffffffffffH ; Ten bytes 
 ```
