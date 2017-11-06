@@ -316,6 +316,6 @@ Memory Location | Stack Item  | Offest from EBP | Psudo Code    | Responsibility
 4               | save esi    | -20             | push esi      | callee
 0 - Low         | save edi    | -24  <-- esp    | push edi      | callee
 
-Note that the Memory address is not an actual address but just a relative reference in bytes                
+Note that the Memory Location is not an actual address but just a relative reference in bytes.  Since the stack grows from high to low any other items pushed on the stack would become the new Low relative reference of zero on this chart.  As items are removed from the stack, this stack frame shrinks from bottom to top, i.e. the bottom ones are discarded first.             
                 
 
