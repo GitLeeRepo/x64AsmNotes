@@ -295,3 +295,26 @@ Mnemonic     | Description
 * eax or edx:eax returns the results of primitive types
 * The **Called** routine is responsible for cleaning up the stack
 
+# Stack Frames
+
+Assuming 4-byte parameters and local varibles a stack would look like the following
+
+Memory Location | Stack Item  | Offest from EBP | Psudo Code    | Responsibility
+----------------|-------------|-----------------|---------------|---------------
+52 - High       | param s3    | +28             | push &s3      | caller
+48              | param s2    | +24             | push &s2      | caller
+44              | param s1    | +20             | push &s1      | caller
+40              | param c     | +16             | push c        | caller
+36              | param b     | +12             | push b        | caller
+32              | param a     | +8              | push a        | caller
+28              | return Addr | +4              | call proc     | caller
+24              | caller ebp  | 0    <-- ebp    | push ebp      | callee
+20              | local var3  | -4              | sub esp,12    | callee
+16              | local var2  | -8              | (alloc above) | callee   
+12              | local var1  | -12             | (alloc above) | callee
+8               | save ebx    | -16             | push ebx      | callee
+4               | save esi    | -20             | push esi      | callee
+0 - Low         | save edi    | -24  <-- esp    | push edi      | callee
+                
+                
+
