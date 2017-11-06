@@ -4,22 +4,27 @@ Notes on using the gdb debugger under Linux
 
 # Reference
 
+## YouTube Videos
+
+* [Into to gdb](https://www.youtube.com/watch?v=xQ0ONbt-qPs)
+
 # Command Line Args
 
 # Commands in the debugger
 
 ## Display Commands
 
-* **p varname** - display the contents of the memory variable in decimal
-* **p/a varname** - display the address of the variable
-* **p/c varname** - display the value as a character
-* **p/d varname** - display the value as a decimal number (the default)
-* **p/f varname** - display the value as a floating point numbers
-* **p/i**         - display the instruction
-* **p/s varname** - display a string value
-* **p/t varname** - display the value as a binary number
-* **p/u varname** - display the value as an unsigned integer
-* **p/x varname** - display the value in hex format
+* **p varname** - (**print**) display the contents of the memory variable in decimal
+* **p/a &varname** - (**print**) display the address of the variable
+* **p/c varname** - (**print**) display the value as a character
+* **p/d varname** - (**print**) display the value as a decimal number (the default)
+* **p/f varname** - (**print**) display the value as a floating point numbers
+* **p/i $pc**     - (**print**) display the instruction at the current execution line
+* **p/s varname** - (**print**) display a string value
+* **p/t varname** - (**print**) display the value as a binary number
+* **p/u varname** - (**print**) display the value as an unsigned integer
+* **p/x varname** - (**print**) display the value in hex format
+* **
 
 ## Examine Memory Commands
 
@@ -42,7 +47,19 @@ The single letter qualifiers used for the display commands above can also be use
 
 ## Examine Registers
 
-* **i r** - (**info registers**)
+* **i r** - (**info registers**) - display all registers
+* **i r regname** - (**info registers**) display the specified register
+* **p $regname** - (**print**) display the contents of the $regname register
+
+## Adding a Watch
+
+When a watch is added, it will display the value of the watched variable/register when it is changed while stepping through the code.
+
+* **wa varname** - (**watch**) - add a watch on varname
+* **wa $regname** - (**watch**) - add a watch on the specified register
+* **i wat** - (**info watch**) - display all watches
+* **awatch** - set a watchpoint for an expression
+
 
 ## Display Source and Location
 
@@ -51,6 +68,8 @@ The single letter qualifiers used for the display commands above can also be use
 * **l 1,20** - (**list**) display from line 1 through line 20
 * **bt** - (**back trace**) show the current line of exection and what function you are in, with the calling stack
 
+Note: pressing **Enter** repeats the last command, so entering **list** followed by **Enter** on a blank line will list the next 10 lines of code.  This can be repeated until you reach the end of the program listing.
+
 ## Setting break points
 
 * **b 18** - (**break**) set break point on line 18
@@ -58,12 +77,14 @@ The single letter qualifiers used for the display commands above can also be use
 
 ## Running and Stepping through code
 
+* **start** - start execution of program, pausing at first instruction
 * **r** - (**run**) code to next breakpoint (if any) or to completion if not.
-* **s** - (**step**) **into** function, or **over** if not a function on the current line
-* **n** - (**next**) step **over** a function or any other line of code
+* **s** - (**step**) run one line of code.  Step **into** function, or **over** the code if not a function on the current line
+* **n** - (**next**) run one line of code.  Step **over** a function or any other line of code
 * **c** - (**continue**) - continue running code from the current line
 * **en** - (**enbable**) break points
 * **dis** - (**disable**) break points
 
+Note: since **Enter** repeats the last command you can continue to **step** through the program by just pressing **Enter** on a blank line after the original **step** has been executed.
 
 
