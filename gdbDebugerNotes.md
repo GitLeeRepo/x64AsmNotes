@@ -12,6 +12,8 @@ Notes on using the gdb debugger under Linux
 
 # Commands in the debugger
 
+* **gbd progname** - launch with the executable name to debug.  Make sure the executable was complile/assembled with the **-g** flag to include debugging information (symbolic names, etc)
+
 ## Display Commands
 
 * **p varname** - (**print**) display the contents of the memory variable in decimal
@@ -49,16 +51,21 @@ The single letter qualifiers used for the display commands above can also be use
 
 * **i r** - (**info registers**) - display all registers
 * **i r regname** - (**info registers**) display the specified register
+* **i r reg1 reg2** - (**info registers**) display the two registers listed
 * **p $regname** - (**print**) display the contents of the $regname register
 
-## Adding a Watch
+## Watch points
 
-When a watch is added, it will display the value of the watched variable/register when it is changed while stepping through the code.
+When a watch is added, it will display the value of the watched variable/register when it is changed while stepping through the code.  The code will break at the watch point
 
 * **wa varname** - (**watch**) - add a watch on varname
 * **wa $regname** - (**watch**) - add a watch on the specified register
 * **i wat** - (**info watch**) - display all watches
-* **awatch** - set a watchpoint for an expression
+* **awatch** - set a watchpoint for an expression.  The program will break when the expression is true.
+* **rwatch varname** - shows watch when varname is read.  The program will break when the variable is read
+* **dis #** - (**disable**) - disable watch by number (use **i wat**) to get watch numbers.  It is still in the list, but is disabled
+* **en #** - (**enable**) - enable disabled watch by number
+* **del #** - (**delete**) - delete a watch by number both disabling and removing it from the list
 
 
 ## Display Source and Location
@@ -70,10 +77,11 @@ When a watch is added, it will display the value of the watched variable/registe
 
 Note: pressing **Enter** repeats the last command, so entering **list** followed by **Enter** on a blank line will list the next 10 lines of code.  This can be repeated until you reach the end of the program listing.
 
-## Setting break points
+## Break points
 
 * **b 18** - (**break**) set break point on line 18
 * **cl 18** - (**clear**) break point on line 18
+* **i b** - (**info break**) dieplays list of break points and watches
 
 ## Running and Stepping through code
 
