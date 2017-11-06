@@ -113,8 +113,8 @@ BaseReg + IndexReg  * SF + Disp | mov eax,\[ebx+esi\*4+MyVar\]
 
 ### Big Endian vs Little Endian
 
-* **Big Endian** - Typically found on **RISC** based architectures.  Data is stored in memory for its most signficant byte to the least significant byte.  When looking at a memory dump of bytes in hex, the numbers read as we normally read numbers, from left to right.
-* **Little Endian** - Typically found on **CISC** based architectures (such as the x86).  Data is stored from the least significant byte to the most significant byte.  Therefore, when looking at a memory dump of bytes in hex, the number reads backwards to what we are accustommed to, you read the number from right to left.  This is only true of memory locations, within **registers** the bytes are layout in **Big Endian** format.
+* **Big Endian** - Typically found on **RISC** based architectures.  Data is stored in memory for its most signficant byte to the least significant byte.  When looking at a memory dump of bytes in hex from **low to high**, the numeric values read as we normally read numbers, from left to right within that data type (word, dword, etc).
+* **Little Endian** - Typically found on **CISC** based architectures (such as the x86/x64).  Data is stored from the least significant byte to the most significant byte.  Therefore, when looking at a memory dump of bytes in hex from **low to high**, the numeric reads backwards to what we are accustommed to, you read the number from right to left within that data type (word, dword).  This is only true of memory locations, within **registers** the bytes are layout in **Big Endian** format.  ASCII byte strings do appear normal in memory dumps (left to right) because they are stored on byte boundaries, not the larger word and dword boundaries.
 
 ### No Memory to Memory Operations
 
@@ -334,7 +334,7 @@ When creating an assembler module that is called by a C++ module:
 
 # Templates
 
-## Standalone Template
+## Standalone Template for 32-bit
 
 ```asm
 .386
@@ -358,11 +358,13 @@ end main
 ```
 
 
-## Called from C++
+## Called from C++ Template for 32-bit
 
 ```asm
-       .model flat,c
-        .code
+
+.model flat,c
+     
+.code
 
 FuncName  proc
 
