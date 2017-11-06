@@ -315,6 +315,7 @@ Memory Location | Stack Item  | Offest from EBP | Psudo Code    | Responsibility
 8               | save ebx    | -16             | push ebx      | callee
 4               | save esi    | -20             | push esi      | callee
 0 - Low         | save edi    | -24  <-- esp    | push edi      | callee
-                
+
+Note that the Memory address is not an actual address but just a relative reference in bytes                
                 
 
