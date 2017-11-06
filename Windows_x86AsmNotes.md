@@ -93,8 +93,9 @@ The following are all valid operand operatons
     mov eax,[myVar]   ; move memory value to register
     lea eax,&myvar    ; move memory address to register
     mov [myVar],eax   ; move register value to memory location
+    mov [myVar],10    ; move immediate to memory location
 ```
-Note that moving memory to memory is not a valid operation
+Note that moving memory to memory is NOT a valid operation
 
 
 ## Memory Addressing
