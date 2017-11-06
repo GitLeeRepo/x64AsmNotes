@@ -85,7 +85,7 @@ There are three basic types of operands:
 * Register - operate on the general purpose registers
 * Memory - operate on memory and data stored in memory
 
-The following are all valid operand operatons
+The following are all valid operand operations
 
 ```asm
     mov eax,10        ; move immediate to register
