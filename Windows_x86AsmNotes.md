@@ -318,4 +318,66 @@ Memory Location | Stack Item  | Offest from EBP | Psudo Code    | Responsibility
 
 Note that the Memory Location is not an actual address but just a relative reference in bytes.  Since the stack grows from high to low any other items pushed on the stack would become the new Low relative reference of zero on this chart.  As items are removed from the stack, this stack frame shrinks from bottom to top, i.e. the bottom ones are discarded first.             
                 
+# Visual Studio 2017 Setup
 
+To setup a Visual Studio 2017 project to assemble and assembly (\*.asm) file (These steps assume Visual Studio knowledge and don't list every step in setting up the project, just those that are unique to setting up an assembly project)
+
+* On the New Project wizard select Visual C++ Empty Project, name it and create it
+* Once in the project, right click the project header in the Solution Explorer and select **Build Dependencies / Build Customizations**
+* Check the **masm** check box.
+* Right Click on the \*.asm file itself, select properties, set **Exclude from Build** to **no** and **Item Type** to **Microsoft Macro Assembler**
+
+When creating an assembler module that is called by a C++ module:
+
+* First create the C++ Solution and Project.  
+* Add a sub project in the same folder for the assembly files, following the instructions above.  
+
+# Templates
+
+## Standalone Template
+
+```asm
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess proto,dwExitCode:dword
+
+.data
+
+sampleStr   db "Hello, World!", 0dh, 0ah, 0dh, 0ah, 0
+sampleWord      dw 65535
+sampleDouble    dd 4294967295
+
+.code
+
+main proc
+	
+    invoke ExitProcess,0
+main endp
+end main
+```
+
+
+## Called from C++
+
+```asm
+       .model flat,c
+        .code
+
+FuncName  proc
+
+; Function prolog
+        push ebp
+        mov ebp,esp
+        sub esp,12                          ;Allocate local storage space
+
+
+; Function epilog
+        mov esp,ebp                         ;deallocate local stack variables
+        pop ebp
+        ret
+FuncName  endp
+        end
+
+
+```
