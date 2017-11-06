@@ -85,6 +85,18 @@ There are three basic types of operands:
 * Register - operate on the general purpose registers
 * Memory - operate on memory and data stored in memory
 
+The following are all valid operand operatons
+
+```asm
+    mov eax,10        ; move immediate to register
+    mov eax,ebx       ; move register to register
+    mov eax,[myVar]   ; move memory value to register
+    lea eax,&myvar    ; move memory address to register
+    mov [myVar],eax   ; move register value to memory location
+```
+Note that moving memory to memory is not a valid operation
+
+
 ## Memory Addressing
 
 Memory is addresses through several components (Displacements, Base Registers, Index Registers, and a scale factor for the index).  An **Effective Address** is caluclated from **BaseReg + IndexReg  \* ScaleFactor + Displ** 
