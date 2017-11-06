@@ -95,4 +95,10 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 
 Note: since **Enter** repeats the last command you can continue to **step** through the program by just pressing **Enter** on a blank line after the original **step** has been executed.
 
+## Setting Variables/Registers in the Debugger
+
+* **set var varname = 5** - set the variable varname = 5
+* **set var $regname = 8** - set the register $regname = 8
+
+
 
