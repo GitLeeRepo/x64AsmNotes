@@ -409,6 +409,30 @@ FuncName  proc
         ret
 FuncName  endp
         end
+```
 
+# Examples
 
+## Forward and Backward Jumps
+
+MASM provides a shorthand annonymous label **@@:** that can be used with **@F** (jump to next **@@** forward label) and **@B** (jump to previous **@@** backward label)
+
+**@F** example
+
+```asm
+        cmp eax,ecx
+        jle @F
+        mov eax,ecx
+    
+@@:     pop ebp
+        ret
+```
+
+**@B** example
+
+```asm
+@@:     add eax,[edx]
+        add edx,4
+        dec ecx
+        jnz @B     
 ```
