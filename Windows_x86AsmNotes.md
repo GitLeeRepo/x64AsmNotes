@@ -74,32 +74,31 @@ The segment registers **(CS, DS, SS, ES, FS, GS)** are used to specify memory fo
 Contains status bits that track logical and arithmetic operations, among other things
 
 Flag  | VS* | Flag Name                | Bit | Type    | Use
-------|-----|--------------------------|-----|---------|-
-CF    | CY  | Carry Flag               | 0   | Status  | x
-PF    | PE  | Parity Flag              | 2   | Status  | x
-AF    | AC  | Auxilary Flag            | 4   | Status  | x
-ZF    | ZR  | Zero Flag                | 6   | Status  | x
-SF    | PL  | Sign Flag                | 7   | System  | x
-TF    | N/A | Trap Flag                | 8   | System  | x
-IF    | EI  | Interrupt Enabled Flag   | 9   | System  | x
-DF    | UP  | Direction Flag           | 10  | Control | x
-OF    | OV  | Overflow Flag            | 11  | Status  | x
-IOPL  | N/A | I/O Priv Level Bit 0     | 12  | System  | x
-IOPL  | N/A | I/O Priv Level Bit 1     | 13  | System  | x
-NT    | N/A | Nested Task              | 14  | System  | x
-RF    | N/A | Resume Flag              | 16  | System  | x
-VM    | N/A | Virtual 8086 Mode        | 17  | System  | x
-AC    | N/A | Alignment Check          | 18  | System  | x
-VIF   | N/A | Virtual Interupt Flag    | 19  | System  | x
-VIP   | N/A | Virtual Interupt Pending | 20  | System  | x
-ID    | N/A | ID Flag                  | 21  | System  | x
+------|-----|--------------------------|-----|---------|-----------------------------
+CF    | CY  | Carry Flag               | 0   | Status  | Comparison, Arithmetic
+PF    | PE  | Parity Flag              | 2   | Status  | even/odd least sig byte
+AF    | AC  | Adjust/Auxilary Flag     | 4   | Status  | Carry/borrow between nibbles
+ZF    | ZR  | Zero Flag                | 6   | Status  | Comparison, Arithmetic
+SF    | PL  | Sign Flag                | 7   | System  | Comparison, Arithmetic
+TF    | N/A | Trap Flag                | 8   | System  | Single step debugging
+IF    | EI  | Interrupt Enabled Flag   | 9   | System  | Interrupts handled/ignored
+DF    | UP  | Direction Flag           | 10  | Control | String Flow
+OF    | OV  | Overflow Flag            | 11  | Status  | Comparison, Arithmetic
+IOPL  | N/A | I/O Priv Level Bit 0     | 12  | System  | System
+IOPL  | N/A | I/O Priv Level Bit 1     | 13  | System  | System
+NT    | N/A | Nested Task              | 14  | System  | System
+RF    | N/A | Resume Flag              | 16  | System  | System
+VM    | N/A | Virtual 8086 Mode        | 17  | System  | System
+AC    | N/A | Alignment Check          | 18  | System  | System
+VIF   | N/A | Virtual Interupt Flag    | 19  | System  | System
+VIP   | N/A | Virtual Interupt Pending | 20  | System  | System
+ID    | N/A | ID Flag                  | 21  | System  | System
 
 * VS - Visual Studio debugger name for flag
 
 
 ## Other Registers
 
-* **EFLAG Register** - contains status bits that track logical and arithmetic operations, among other things
 * **EIP Register** - the instruction pointer that contains the offset to the next instruction to be executed.  This register is not directly accessed.
 * **X87 Registers (MMX)** - Supports **SIMD Single Instruction Multiple Data** operations
 * **AVE/SSE Registers** - Supports **SIMD Single Instruction Multiple Data** operations
