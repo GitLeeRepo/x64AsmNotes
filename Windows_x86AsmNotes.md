@@ -327,10 +327,12 @@ To setup a Visual Studio 2017 project to assemble and assembly (\*.asm) file (Th
 * Check the **masm** check box.
 * Right Click on the \*.asm file itself, select properties, set **Exclude from Build** to **no** and **Item Type** to **Microsoft Macro Assembler**
 
-When creating an assembler module that is called by a C++ module:
+When creating an assembler module that is called by a another module (such as a C++ Program:
 
 * First create the C++ Solution and Project.  
 * Add a sub project in the same folder for the assembly files, following the instructions above.  
+* Right Click on the Assebly language project in the Solutions Explorer and select **Properties**.  Change the **Target Extension** to **\*.obj** and the **Configuration Type** to **Static Library (.lib)** from Application (.exe)
+* For the main calling project (the C++ program) right click on its project's **References**, select **Add Reference** and select the assembly language sub project (it should be displayed, just check the box)
 
 # Templates
 
