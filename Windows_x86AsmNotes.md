@@ -420,9 +420,9 @@ MASM provides a shorthand annonymous label **@@:** that can be used with **@F** 
 **@F** example
 
 ```asm
-        cmp eax,ecx
-        jle @F
-        mov eax,ecx
+        cmp eax,ecx       ; compare eax and ecx
+        jle @F            ; jump forward to the next @@ label if eax is less than or equal to ecx
+        mov eax,ecx       ; eax was greater than ecx, so move ecx to eax
     
 @@:     pop ebp
         ret
@@ -431,8 +431,9 @@ MASM provides a shorthand annonymous label **@@:** that can be used with **@F** 
 **@B** example
 
 ```asm
+	; sum array element pointed to by edx
 @@:     add eax,[edx]
-        add edx,4
-        dec ecx
-        jnz @B     
+        add edx,4       ; increment edx to next array element
+        dec ecx         ; decrement the array counter
+        jnz @B          ; keep looping until ecx counter is zero (jump back to @@)
 ```
