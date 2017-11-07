@@ -69,12 +69,40 @@ Some of the Specialized Uses are by convention only. Several can be used for gen
 
 The segment registers **(CS, DS, SS, ES, FS, GS)** are used to specify memory for **code, data, and stack segements**.  Normally the programmer doesn't need to deal with these registers, the operating system manages them.
 
+## EFLAG Register
+
+Contains status bits that track logical and arithmetic operations, among other things
+
+Flag  | VS* | Flag Name                | Bit | Type    | Use
+------|-----|--------------------------|-----|---------|-
+CF    | CY  | Carry Flag               | 0   | Status  | x
+PF    | PE  | Parity Flag              | 2   | Status  | x
+AF    | AC  | Auxilary Flag            | 4   | Status  | x
+ZF    | ZR  | Zero Flag                | 6   | Status  | x
+SF    | PL  | Sign Flag                | 7   | System  | x
+TF    | N/A | Trap Flag                | 8   | System  | x
+IF    | EI  | Interrupt Enabled Flag   | 9   | System  | x
+DF    | UP  | Direction Flag           | 10  | Control | x
+OF    | OV  | Overflow Flag            | 11  | Status  | x
+IOPL  | N/A | I/O Priv Level Bit 0     | 12  | System  | x
+IOPL  | N/A | I/O Priv Level Bit 1     | 13  | System  | x
+NT    | N/A | Nested Task              | 14  | System  | x
+RF    | N/A | Resume Flag              | 16  | System  | x
+VM    | N/A | Virtual 8086 Mode        | 17  | System  | x
+AC    | N/A | Alignment Check          | 18  | System  | x
+VIF   | N/A | Virtual Interupt Flag    | 19  | System  | x
+VIP   | N/A | Virtual Interupt Pending | 20  | System  | x
+ID    | N/A | ID Flag                  | 21  | System  | x
+
+* VS - Visual Studio debugger name for flag
+
+
 ## Other Registers
 
 * **EFLAG Register** - contains status bits that track logical and arithmetic operations, among other things
 * **EIP Register** - the instruction pointer that contains the offset to the next instruction to be executed.  This register is not directly accessed.
 * **X87 Registers (MMX)** - Supports **SIMD Single Instruction Multiple Data** operations
-* **AVE/SSE Reigisters** - Supports **SIMD Single Instruction Multiple Data** operations
+* **AVE/SSE Registers** - Supports **SIMD Single Instruction Multiple Data** operations
 
 # Instruction Set
 
