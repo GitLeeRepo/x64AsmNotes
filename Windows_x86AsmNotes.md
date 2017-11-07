@@ -363,7 +363,7 @@ When creating an assembler module that is called by a another module (such as a 
 
 # Templates
 
-## Standalone Template for 32-bit
+## 32-bit Standalone Template with Main proc
 
 ```asm
 .386
@@ -387,7 +387,7 @@ end main
 ```
 
 
-## Called from C++ Template for 32-bit
+## 32-bit Template for externally called proc
 
 ```asm
 
