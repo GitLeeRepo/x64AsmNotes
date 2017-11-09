@@ -31,9 +31,9 @@ ld -o progname progname.o
 
 ## For Progams that DO use a main proc
 
-Asseble with **yasm** as above, but use **gcc** to do the linking instead
+Assemble with **yasm** as above, but use **gcc** to do the linking instead
 
 ```bash
 gcc -static -o progname progname.o
 ```
-Note that the examples in [Introduction to 64 Bit Intel Assembly Language Programming for Linux: Second Edition](https://www.amazon.com/gp/product/B008H7HL3M/ref=oh_aui_d_detailpage_o00_?ie=UTF8&psc=1) by Ray Seyfarth, do NOT include the **-static** arguement for **gcc**, but without it I get an **"/usr/bin/ld: pythag.o: relocation R_X86_64_32 against `.data' can not be used when making a shared object; recompile with -fPIC /usr/bin/ld: final link failed: Nonrepresentable section on output"** error.  The error doesn't occur when using the **ld** linker (requires **_start** label instead of **main**), so apparently and issue with using **gcc** as the linker, where it wants to link to shared libararies that must be relocateable, unless the **-static** arguement is used.
+Note that the examples in [Introduction to 64 Bit Intel Assembly Language Programming for Linux: Second Edition](https://www.amazon.com/gp/product/B008H7HL3M/ref=oh_aui_d_detailpage_o00_?ie=UTF8&psc=1) by Ray Seyfarth, do NOT include the **-static** arguement for **gcc**, but without it I get an **"/usr/bin/ld: pythag.o: relocation R_X86_64_32 against `.data' can not be used when making a shared object; recompile with -fPIC /usr/bin/ld: final link failed: Nonrepresentable section on output"** error.  The error doesn't occur when using the **ld** linker (requires **_start** label instead of **main**), so apparently and issue with using **gcc** as the linker, where it wants to link to shared libararies that must be relocateable, unless the **-static** arguement is used.  **yasm** does not have a **-fPIC** option.
