@@ -10,9 +10,10 @@ Notes on using the gdb debugger under Linux
 
 # Command Line Args
 
-# Commands in the debugger
+* **gdb progname** - launch with the executable name to debug.  Make sure the executable was complile/assembled with the **-g** flag to include debugging information (symbolic names, etc)
+* **gdb --args progname arg1 arg2 ...** - launch with command line arguements for progname
 
-* **gbd progname** - launch with the executable name to debug.  Make sure the executable was complile/assembled with the **-g** flag to include debugging information (symbolic names, etc)
+# Commands in the debugger
 
 ## Display Commands
 
