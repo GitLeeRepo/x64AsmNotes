@@ -88,9 +88,9 @@ Note: pressing **Enter** repeats the last command, so entering **list** followed
 ## Running and Stepping through code
 
 * **start** - start execution of program, pausing at first instruction
-* **r** - (**run**) code to next breakpoint (if any) or to completion if not.
-* **s** - (**step**) run one line of code.  Step **into** function, or **over** the code if not a function on the current line
-* **n** - (**next**) run one line of code.  Step **over** a function or any other line of code
+* **r args** - (**run**) run the program with optional args.
+* **s optcount** - (**step**) run one line of code.  Step **into** function, or **over** the code if not a function on the current line
+* **n optcount** - (**next**) run one line of code.  Step **over** a function or any other line of code
 * **c** - (**continue**) - continue running code from the current line
 * **en** - (**enbable**) break points
 * **dis** - (**disable**) break points
