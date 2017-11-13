@@ -1,6 +1,6 @@
 # Overview
 
-Notes on using the gdb debugger under Linux
+Notes on using the gdb debugger under Linux.  It also contains information on the **objdump** command
 
 # Reference
 
@@ -103,4 +103,10 @@ Note: since **Enter** repeats the last command you can continue to **step** thro
 * **set var $regname = 8** - set the register $regname = 8
 
 
+## objdump Command
 
+Provides a dump for binary executables and object files.  The **-d** arguement tells it to disasseble the output, and the **-M intel** commnd tells it to display the assembly code in the **intel format** rather than the default **AT&T format**
+
+```bash
+objdump -d -M intel ObjOrExeFile
+```
