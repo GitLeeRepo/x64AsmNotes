@@ -110,3 +110,16 @@ Provides a dump for binary executables and object files.  The **-d** arguement t
 ```bash
 objdump -d -M intel ObjOrExeFile
 ```
+
+## Doing a Hex Dump
+
+Use the **xxd** utility to do a hex dump from a file, or from the console when no parameters are provided (end input wiht Ctrl-D)
+
+```bash
+xxd test.o
+
+...
+00000070: 0200 0000 0000 0000 0000 0000 4865 6c6c  ............Hell
+00000080: 6f2c 2077 6f72 6c64 210a 0000 002e 7465  o, world!.....te
+...
+```
