@@ -12,7 +12,7 @@ x86-32 Assembly language notes using MASM (Microsoft Assembler) under Windows.  
 
 # Data Types
 
-## Fundemental Data Types
+## Fundamental Data Types
 
 Data Type       | Bit Length | Byte Length | Typical Use                        | C/C++ Types
 ----------------|------------|-------------|------------------------------------|--------------------
@@ -29,11 +29,11 @@ Quad Quadword   | 256        | 32          | Packed int, packed float           
 * **X86 strings** - typically stored in bytes and words.  Several instructions are provided compare, move, load, store, scan strings.  X86 strings are also used for arrays.
 * **Bit fields** - used for masks by certain instructions.  Up to 32 bits in length.
 * **Bit strings** - can be up to **2^32 - 1** bits in length.  Several instructions provided to operate on them
-* **BCD** - Binary Coded Decimal - for representing decimal values.  When **packed** there are two digits per byte, while unmpacked are 1 digit per byte.
+* **BCD** - Binary Coded Decimal - for representing decimal values.  When **packed** there are two digits per byte, while unpacked are 1 digit per byte.
 
 ## Packed Data Types
 
-Packed data types are used in SIMD (Single Intruction Multiple Data) instructions.  For example a 64 bit packed field can pack 8 8-bit integers, or 4 16-bit integers, or 2 32-bit integers
+Packed data types are used in SIMD (Single Instruction Multiple Data) instructions.  For example a 64 bit packed field can pack 8 8-bit integers, or 4 16-bit integers, or 2 32-bit integers
 
 ## Example Data Definition Statement
 
@@ -127,7 +127,7 @@ Note that moving memory to memory is NOT a valid operation
 
 ## Memory Addressing
 
-Memory is addresses through several components (Displacements, Base Registers, Index Registers, and a scale factor for the index).  An **Effective Address** is caluclated from **BaseReg + IndexReg  \* ScaleFactor + Displ** 
+Memory is addresses through several components (Displacements, Base Registers, Index Registers, and a scale factor for the index).  An **Effective Address** is calculated from **BaseReg + IndexReg  \* ScaleFactor + Displ** 
 
 Address Mode                    | Example
 --------------------------------|-------------------------------
@@ -140,8 +140,8 @@ BaseReg + IndexReg  * SF + Disp | mov eax,\[ebx+esi\*4+MyVar\]
 
 ### Big Endian vs Little Endian
 
-* **Big Endian** - Typically found on **RISC** based architectures.  Data is stored in memory for its most signficant byte to the least significant byte.  When looking at a memory dump of bytes in hex from **low to high**, the numeric values read as we normally read numbers, from left to right within that data type (word, dword, etc).  For example, the 32-bit hex number **12345678**, appears as **12 34 56 78** in a memory dump (every two digits is a byte)
-* **Little Endian** - Typically found on **CISC** based architectures (such as the x86/x64).  Data is stored from the least significant byte to the most significant byte.  Therefore, when looking at a memory dump of bytes in hex from **low to high**, the numeric reads backwards to what we are accustommed to, you read the number from right to left within that data type (word, dword). For example, the 32-bit hex number **12345678**, appears as **78 56 34 12** in a memory dump (every two digits represent a byte). This is only true of memory locations, within **registers** the bytes are layout in **Big Endian** format.  ASCII byte strings do appear normal in memory dumps (left to right) because they are stored on byte boundaries, not the larger word and dword boundaries.
+* **Big Endian** - Typically found on **RISC** based architectures.  Data is stored in memory for its most significant byte to the least significant byte.  When looking at a memory dump of bytes in hex from **low to high**, the numeric values read as we normally read numbers, from left to right within that data type (word, dword, etc).  For example, the 32-bit hex number **12345678**, appears as **12 34 56 78** in a memory dump (every two digits is a byte)
+* **Little Endian** - Typically found on **CISC** based architectures (such as the x86/x64).  Data is stored from the least significant byte to the most significant byte.  Therefore, when looking at a memory dump of bytes in hex from **low to high**, the numeric reads backwards to what we are accustomed to, you read the number from right to left within that data type (word, dword). For example, the 32-bit hex number **12345678**, appears as **78 56 34 12** in a memory dump (every two digits represent a byte). This is only true of memory locations, within **registers** the bytes are layout in **Big Endian** format.  ASCII byte strings do appear normal in memory dumps (left to right) because they are stored on byte boundaries, not the larger word and dword boundaries.
 
 ### No Memory to Memory Operations
 
@@ -308,7 +308,7 @@ Mnemonic     | Description
 
 ## C Declaration
 
-* The most common caling convention
+* The most common calling convention
 * Function parameters pushed onto the stack from right to left
 * Saves the old stack pointer and sets up a new stack frame
 * eax or edx:eax returns the results of primitive data types
@@ -324,9 +324,9 @@ Mnemonic     | Description
 
 # Stack Frames
 
-Assuming 4-byte parameters and local varibles a stack would look like the following
+Assuming 4-byte parameters and local variables a stack would look like the following
 
-Memory Location | Stack Item  | Offest from EBP | Psudo Code    | Responsibility
+Memory Location | Stack Item  | Offset from EBP | Pseudo Code    | Responsibility
 ----------------|-------------|-----------------|---------------|---------------
 52 - High       | param s3    | +28             | push &s3      | caller
 48              | param s2    | +24             | push &s2      | caller
@@ -358,7 +358,7 @@ When creating an assembler module that is called by a another module (such as a 
 
 * First create the C++ Solution and Project.  
 * Add a sub project in the same folder for the assembly files, following the instructions above.  
-* Right Click on the Assebly language project in the Solutions Explorer and select **Properties**.  Change the **Target Extension** to **\*.obj** and the **Configuration Type** to **Static Library (.lib)** from Application (.exe)
+* Right Click on the Assembly language project in the Solutions Explorer and select **Properties**.  Change the **Target Extension** to **\*.obj** and the **Configuration Type** to **Static Library (.lib)** from Application (.exe)
 * For the main calling project (the C++ program) right click on its project's **References**, select **Add Reference** and select the assembly language sub project (it should be displayed, just check the box)
 
 # Templates
@@ -415,7 +415,7 @@ FuncName  endp
 
 ## Forward and Backward Jumps
 
-MASM provides a shorthand annonymous label **@@:** that can be used with **@F** (jump to next **@@** forward label) and **@B** (jump to previous **@@** backward label)
+MASM provides a shorthand anonymous label **@@:** that can be used with **@F** (jump to next **@@** forward label) and **@B** (jump to previous **@@** backward label)
 
 **@F** example
 

@@ -1,11 +1,11 @@
 # Overview
 
-Notes on x64 assebly code under Linux.
+Notes on x64 assembly code under Linux.
 
 # Reference
 
 * [Introduction to 64 Bit Intel Assembly Language Programming for Linux: Second Edition](https://www.amazon.com/gp/product/B008H7HL3M/ref=oh_aui_d_detailpage_o00_?ie=UTF8&psc=1) by Ray Seyfarth.  Many of the notes taken come from this book
-* [My notes on x86 assembly for Windows](https://github.com/GitLeeRepo/x86Andx64AsmNotes/blob/master/Windows_x86AsmNotes.md) which contains more indepth descriptions of the instruction set
+* [My notes on x86 assembly for Windows](https://github.com/GitLeeRepo/x86Andx64AsmNotes/blob/master/Windows_x86AsmNotes.md) which contains more in depth descriptions of the instruction set
 * [64-bit Examples](https://www.csee.umbc.edu/portal/help/nasm/sample_64.shtml) - includes printf examples for 64-bit (using registers not stack for params)
 
 # Assembling and Linking
@@ -30,7 +30,7 @@ yasm -f elf64 -gdwarf2 -l progname.lst progname.asm
 ld -o progname progname.o
 ```
 
-## For Progams that DO use a main proc
+## For Programs that DO use a main proc
 
 Assemble with **yasm** as above, but use **gcc** to do the linking instead
 
