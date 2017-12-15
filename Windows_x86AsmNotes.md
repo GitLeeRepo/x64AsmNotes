@@ -67,32 +67,32 @@ Some of the Specialized Uses are by convention only. Several can be used for gen
 
 ## Segment Registers
 
-The segment registers **(CS, DS, SS, ES, FS, GS)** are used to specify memory for **code, data, and stack segements**.  Normally the programmer doesn't need to deal with these registers, the operating system manages them.
+The segment registers **(CS, DS, SS, ES, FS, GS)** are used to specify memory for **code, data, and stack segments**.  Normally the programmer doesn't need to deal with these registers, the operating system manages them.
 
 ## EFLAG Register
 
 Contains status bits that track logical and arithmetic operations, among other things
 
-Flag  | VS* | Flag Name                | Bit | Type    | Use
-------|-----|--------------------------|-----|---------|-----------------------------
-CF    | CY  | Carry Flag               | 0   | Status  | Comparison, Arithmetic
-PF    | PE  | Parity Flag              | 2   | Status  | even/odd least sig byte
-AF    | AC  | Adjust/Auxilary Flag     | 4   | Status  | Carry/borrow between nibbles
-ZF    | ZR  | Zero Flag                | 6   | Status  | Comparison, Arithmetic
-SF    | PL  | Sign Flag                | 7   | System  | Comparison, Arithmetic
-TF    | N/A | Trap Flag                | 8   | System  | Single step debugging
-IF    | EI  | Interrupt Enabled Flag   | 9   | System  | Interrupts handled/ignored
-DF    | UP  | Direction Flag           | 10  | Control | String Flow
-OF    | OV  | Overflow Flag            | 11  | Status  | Comparison, Arithmetic
-IOPL  | N/A | I/O Priv Level Bit 0     | 12  | System  | System
-IOPL  | N/A | I/O Priv Level Bit 1     | 13  | System  | System
-NT    | N/A | Nested Task              | 14  | System  | System
-RF    | N/A | Resume Flag              | 16  | System  | System
-VM    | N/A | Virtual 8086 Mode        | 17  | System  | System
-AC    | N/A | Alignment Check          | 18  | System  | System
-VIF   | N/A | Virtual Interupt Flag    | 19  | System  | System
-VIP   | N/A | Virtual Interupt Pending | 20  | System  | System
-ID    | N/A | ID Flag                  | 21  | System  | System
+Flag  | VS* | Flag Name                 | Bit | Type    | Use
+------|-----|---------------------------|-----|---------|-----------------------------
+CF    | CY  | Carry Flag                | 0   | Status  | Comparison, Arithmetic
+PF    | PE  | Parity Flag               | 2   | Status  | even/odd least sig byte
+AF    | AC  | Adjust/Auxiliary Flag     | 4   | Status  | Carry/borrow between nibbles
+ZF    | ZR  | Zero Flag                 | 6   | Status  | Comparison, Arithmetic
+SF    | PL  | Sign Flag                 | 7   | System  | Comparison, Arithmetic
+TF    | N/A | Trap Flag                 | 8   | System  | Single step debugging
+IF    | EI  | Interrupt Enabled Flag    | 9   | System  | Interrupts handled/ignored
+DF    | UP  | Direction Flag            | 10  | Control | String Flow
+OF    | OV  | Overflow Flag             | 11  | Status  | Comparison, Arithmetic
+IOPL  | N/A | I/O Priv Level Bit 0      | 12  | System  | System
+IOPL  | N/A | I/O Priv Level Bit 1      | 13  | System  | System
+NT    | N/A | Nested Task               | 14  | System  | System
+RF    | N/A | Resume Flag               | 16  | System  | System
+VM    | N/A | Virtual 8086 Mode         | 17  | System  | System
+AC    | N/A | Alignment Check           | 18  | System  | System
+VIF   | N/A | Virtual Interrupt Flag    | 19  | System  | System
+VIP   | N/A | Virtual Interrupt Pending | 20  | System  | System
+ID    | N/A | ID Flag                   | 21  | System  | System
 
 * VS - Visual Studio debugger name for flag
 
